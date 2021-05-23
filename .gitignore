@@ -32,3 +32,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+workspace.code-workspace
+config/config.json
