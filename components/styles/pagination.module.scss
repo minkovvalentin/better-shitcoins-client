@@ -1,0 +1,70 @@
+.pagination-page {
+  font-size: 20px;
+}
+
+ul.pagination {
+  // display: flex;
+  float:right;
+  list-style-type: none;
+  align-items: center;
+  margin:0;
+  padding:0;
+   li{ 
+    display: inline-block;
+    *display: inline; /* IE7 inline-block hack */
+    *zoom: 1;
+    padding: 0px 5px;
+    .pagination-link {
+      cursor: pointer;
+      padding-top: 3px;
+      padding-bottom: 3px;
+      padding-left:13px;
+      padding-right:13px;
+      border: solid 2px #eeeeee;
+      font-size: 25px;
+    }
+   }
+}
+
+// Disabled arrow
+.pagination-previous.pagination-disabled, .pagination-next.pagination-disabled{
+  .pagination-link {
+    border: solid 2px rgba(238,238,238, 0.2);
+    color: rgba(238,238,238, 0.2);
+    cursor: default;
+  }
+}
+
+// Disabled arrow hover
+.pagination-previous:hover.pagination-disabled, .pagination-next:hover.pagination-disabled{
+  .pagination-link {
+    border: solid 2px rgba(238,238,238, 0.2);
+    color: rgba(238,238,238, 0.2);
+    cursor: default;
+  }
+}
+
+.pagination-previous:hover, .pagination-next:hover {
+  color: rgba(238,238,238, 0.7);
+  .pagination-link {
+    border: solid 2px rgba(238,238,238, 0.7);
+  }
+}
+
+.pagination-active {
+  color: rgb(255, 211, 107);
+  font-weight: 500;
+}
+
+.pagination-active:hover {
+  color: rgb(255, 211, 107);
+}
+
+.pagination-previous, .pagination-next, .pagination-page, .pagination-break {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}

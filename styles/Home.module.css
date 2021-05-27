@@ -1,39 +1,10 @@
 .container {
-  background-color: white;
+  background-color: #393e46;
   padding: 20px 50px;
 }
 
-.coins-container {
+.slider-container {
   display: flex;
-  flex-direction: column;
-  row-gap: 20px;
-}
-.coin-container {
-  padding: 10px;
-  border: solid 1px black;
-  opacity: 0.5;
-} 
-
-.coin-title {
-  
-}
-
-.coin-score {
-
-}
-
-.coin-comments-container {
-
-}
-
-.coin-comments-label {
-
-}
-
-.coin-author {
-
-}
-
-.coin-post-time {
-
+  justify-content: flex-end;
+  padding: 10px 20px;
 }
