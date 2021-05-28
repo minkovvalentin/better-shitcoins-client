@@ -6,10 +6,12 @@ interface Props {
   coinsPerPage: number,
   currentPage: number,
   setCurrentPage: Function,
-  setPageOffset: Function
+  setPageOffset: Function,
+  onPageChange: Function
 }
 
- export default function  Pagination({pageCount, coinsPerPage, currentPage, setCurrentPage, setPageOffset}: Props) {
+ export default function  Pagination({pageCount, coinsPerPage, currentPage, setCurrentPage, setPageOffset, onPageChange}: Props) {
+
   return (<ReactPaginate
     forcePage={currentPage}
     initialPage={currentPage}
@@ -21,10 +23,7 @@ interface Props {
     marginPagesDisplayed={0}
     pageRangeDisplayed={0}
     onPageChange={(data: any) => {
-      let selected = data.selected;
-      setCurrentPage(data.selected);
-      setPageOffset(Math.ceil((coinsPerPage*selected)))
-      // TODO On navigation select scroll up on page
+      onPageChange(data.selected);
     }}
     containerClassName={styles['pagination']}
     pageClassName={styles['pagination-page']}

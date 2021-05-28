@@ -1,0 +1,137 @@
+.custom-dropdown-handle-renderer-container {
+  margin:2px;
+  display: flex;
+  svg {
+    height: 20px !important;
+    width: 20px !important;
+  }
+}
+
+.custom-content-renderer-label {
+  font-size: 18px;
+}
+
+.custom-dropdown-renderer-main-container {
+  background-color: #393e46 !important ;
+  overflow-x: hidden;
+}
+
+.custom-dropdown-renderer-item-container {
+  color: #eeeeee;
+  display: flex;
+  column-gap: 15px;;
+  align-items: center;
+  padding: 0px 10px;
+  height: 50px;
+}
+
+.custom-dropdown-renderer-item-container:hover {
+  background-color: rgba(238, 238, 238, 0.8) !important;
+  cursor: pointer;
+  font-size: 16px;
+  color: #222831;
+}
+.custom-dropdown-renderer-input {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.custom-dropdown-renderer-label {
+  text-align: center;
+  font-weight: 500;
+}
+
+.checkbox {
+  --background: #eee;
+  --border: #393E46;
+  --border-hover: #BBC1E1;
+  --border-active: #393E46;
+  --tick: #393E46;
+  position: relative;
+  input,
+  svg {
+      width: 21px;
+      height: 21px;
+      display: block;
+  }
+  input {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      position: relative;
+      outline: none;
+      background: var(--background);
+      border: none;
+      margin: 0;
+      padding: 0;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: box-shadow .1s;
+      box-shadow: inset 0 0 0 var(--s, 1px) var(--b, var(--border));
+      &:hover {
+          --s: 2px;
+          --b: var(--border-hover);
+      }
+      &:checked {
+          --b: var(--border-active);
+      }
+  }
+  svg {
+      pointer-events: none;
+      fill: none;
+      stroke-width: 2px;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke: var(--stroke, var(--border-active));
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 21px;
+      height: 21px;
+      transform: scale(var(--scale, 1)) translateZ(0);
+  }
+  &.path {
+      input {
+          &:checked {
+              --s: 2px;
+              transition-delay: .4s;
+              & + svg {
+                  --a: 16.1 86.12;
+                  --o: 102.22;
+              }
+          }
+      }
+      svg {
+          stroke-dasharray: var(--a, 86.12);
+          stroke-dashoffset: var(--o, 86.12);
+          transition: stroke-dasharray .1s, stroke-dashoffset .1s;
+      }
+  }
+  &.bounce {
+      --stroke: var(--tick);
+      input {
+          &:checked {
+              --s: 11px;
+              & + svg {
+                  animation: bounce .1s linear forwards .1s;
+              }
+          }
+      }
+      svg {
+          --scale: 0;
+      }
+  }
+}
+
+@keyframes bounce {
+  50% {
+      transform: scale(1.2);
+  }
+  75% {
+      transform: scale(.9);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+

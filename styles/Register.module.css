@@ -1,0 +1,44 @@
+.main-container {
+  height: 80vh;
+  position: relative;
+}
+
+.center-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.form-input-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.form-input-label {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.form-input {
+  min-height: 45px;
+  width: 350px;
+  font-size: 18px;
+  padding: 20px 10px;
+}
+
+.form-button {
+  margin: 0 auto;
+  width: 250px;
+  height: 35px;
+  color: #393e46;
+  font-weight: 600;
+  font-size: 18px;
+}
+
